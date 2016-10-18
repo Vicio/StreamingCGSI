@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="streaming_mensajes" Class="StreamingDSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=148.220.38.243;Initial Catalog=streaming_mensajes;User ID=streaming_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="streaming_mensajesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.usuarios" Member="usuarios">
+    <Type Name="usuarios">
+      <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_usuario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="correo_usuario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="hash_usuario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="departamento_usuario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="mensaje_usuario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

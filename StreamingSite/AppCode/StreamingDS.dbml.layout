@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="StreamingDS">
+  <DataContextMoniker Name="/StreamingDSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ec0636a7-1a92-4ab6-a127-5c3d9ee89df4" absoluteBounds="4, 1.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/StreamingDSDataContext/usuarios" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74a42625-ee2f-4fd1-ae1b-9beb93cf8890" absoluteBounds="4.015, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

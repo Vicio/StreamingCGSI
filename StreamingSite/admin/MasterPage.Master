@@ -1,0 +1,226 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="StreamingSite.admin.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title><%= Session["tituloPagina"]%></title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/theme.min.css" />
+        <link rel="stylesheet" href="../css/fixes.css" />
+        <script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            if (top.location != self.location)
+            {
+                top.location = self.location.href
+            }
+        </script>
+		<script>
+			(
+				function(i,s,o,g,r,a,m)
+				{
+					i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+					{
+						(i[r].q=i[r].q||[]).push(arguments)
+					},
+					i[r].l=1*new Date();
+					a=s.createElement(o), m=s.getElementsByTagName(o)[0];
+					a.async=1;
+					a.src=g;
+					m.parentNode.insertBefore(a,m)
+				}
+			)
+			(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-59048217-1', 'auto');
+			  ga('send', 'pageview');
+
+		</script>
+        <asp:ContentPlaceHolder id="encabezado" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body>
+        <form id="formaPrincipal" runat="server">
+            <div class="container-fluid padding-top-xs">
+                <div class="row margin-bottom-sm">
+                    <div class="col-xs-offset-4 col-xs-3 col-sm-offset-0 col-sm-2 col-md-offset-0 col-md-1 col-lg-offset-0 col-lg-1">
+                        <img src="../images/logoUAQ.svg" class="img-responsive" />
+                    </div>
+                    <div id="tituloBorde" class="col-xs-12 col-sm-6 col-md-offset-0 col-md-7 col-lg-offset-0 col-lg-8">
+                        <h2 class="hidden-xs hidden-sm margin-top-xs margin-bottom-xs">UNIVERSIDAD AUTÓNOMA DE QUERÉTARO</h2>
+                        <h3 class="visible-sm margin-top-xs margin-bottom-xs">UNIVERSIDAD AUTÓNOMA DE QUERÉTARO</h3>
+                        <h4 class="visible-xs text-center margin-top-xs margin-bottom-xs">UNIVERSIDAD AUTÓNOMA DE QUERÉTARO</h4>
+                        <asp:ContentPlaceHolder ID="titulo" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-4 col-md-offset-0 col-md-4 col-lg-offset-0 col-lg-3 hidden-xs">
+                        <div class="col-xs-3 col-sm-5 col-md-3">
+                            <a href="http://instagram.com/uaqmx">
+                                <img src="../images/logoInstagram.svg" />              
+                            </a>
+                        </div>
+                        <div class="col-xs-3 col-sm-5 col-md-3">
+                            <a href="https://twitter.com/UAQmx">
+                                <img src="../images/logoTwiter.svg" />              
+                            </a>
+                        </div>
+                        <div class="col-xs-3 col-sm-5 col-md-3">
+                            <a href="http://tv.uaq.edu.mx/">
+                                <img src="../images/logoYoutube.svg" />            
+                            </a>
+                        </div>
+                        <div class="col-xs-3 col-sm-5 col-md-3">
+                            <a href="https://www.facebook.com/uaq.mx">
+                                <img src="../images/logoFacebook.svg" />            
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <nav class="visible-sm visible-xs navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <div class="container margin-bottom-sm">
+                                    <div class="input-group">
+                                        <input id="botonBuscarMobile" name="buscar" type="text" class="form-control" placeholder="Buscar" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-search">
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container margin-bottom-sm">
+                                    <a href="#">Facultades</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container margin-bottom-sm">
+                                    <a href="./tvuaq.aspx">TVUAQ</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body text-center">
+                                            <h6 class="main-color">Avisos</h6>
+                                            <span class="glyphicon glyphicon-menu-up"></span>
+                                            <div id="divAvisos" runat="server">
+
+                                            </div>
+                                            <span class="glyphicon glyphicon-menu-down"></span>
+                                        </div>
+                                    </div>                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="row row-eq-height">
+                    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 main-color-bg padding-top-sm">
+                        <div class="input-group">
+                            <input id="botonBuscar" name="buscar" type="text" class="form-control" placeholder="Buscar" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-search">
+                                </span>
+                            </span>
+                        </div>
+                        <br />
+                        <h5 class="color-panel">Explorar:</h5>
+                        <hr />
+                            <a href="#"><h5 class="color-panel">Facultades</h5></a>
+                            <a href="tvuaq.aspx"><h5 class="color-panel">TVUAQ</h5></a>
+                        <hr />
+                        <div class="panel panel-default">
+                            <div class="panel-body text-center">
+                                <h6 class="main-color">Avisos</h6>
+                                <span class="glyphicon glyphicon-menu-up"></span>
+                                <div id="contenidoAvisos" runat="server">
+
+                                </div>
+                                <span class="glyphicon glyphicon-menu-down"></span>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 color-panel-streaming padding-top-sm">
+                        <div class="opacity-panel-video margin-bottom-sm">
+                            <asp:ContentPlaceHolder id="contenido" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+                <div class="row footer-background">
+                    <div class="hidden-xs col-xs-12 text-right margin-top-xs margin-bottom-xs">
+                        <a href="http://www.uaq.mx/inf-gral/calendario/semestral.html">
+                            <img class="image-fixed-height image-fixed-width" src="../images/logoBoxGris.svg" />
+                        </a>
+                        <a href="https://maps.google.com/maps/ms?msid=200437142916695114164.0004c841a76bf6b40420d&msa=0&ll=20.584421,-100.38826&spn=0.133864,0.222988">
+                            <img class="image-fixed-height image-fixed-width" src="../images/logoPin.svg" />
+                        </a>
+                        <a href="http://148.220.4.15/">
+                            <img class="image-fixed-height image-fixed-width" src="../images/logoFeed.svg" />
+                        </a>
+                        <a href="http://perseo.uaq.mx/cas">
+                            <img class="image-fixed-height image-fixed-width" src="../images/logoInterrogacion.svg" />
+                        </a>
+                        <a href="http://www.uaq.mx/contraloriasocial/">
+                            <img class="image-fixed-height image-fixed-width" src="../images/logoOjo.svg" />
+                        </a>
+                        <a href="http://www.uaq.mx/directorio/">
+                            <img class="image-fixed-height image-fixed-width" src="../images/logoTel.svg" />
+                        </a>
+                        <a href="http://www.uaq.mx/transparencia/">
+                            <img class="image-fixed-height image-fixed-width" src="../images/logoLupa.svg" />
+                        </a>
+                        <a href="http://mail.uaq.mx/">
+                            <img class="image-fixed-height image-fixed-width" src="../images/logoMail.svg" />
+                        </a>
+                        <a href="http://www.uaq.mx/">
+                            <img class="image-fixed-height image-fixed-width" src="../images/logoCasa.svg" />
+                        </a>
+                    </div>
+                    <div class="visible-xs col-xs-12 text-right margin-top-xs margin-bottom-xs">
+                        <a href="http://www.uaq.mx/inf-gral/calendario/semestral.html">
+                            <img class="image-fixed-height-xs image-fixed-width-xs" src="../images/logoBoxGris.svg" />
+                        </a>
+                        <a href="https://maps.google.com/maps/ms?msid=200437142916695114164.0004c841a76bf6b40420d&msa=0&ll=20.584421,-100.38826&spn=0.133864,0.222988">
+                            <img class="image-fixed-height-xs image-fixed-width-xs" src="../images/logoPin.svg" />
+                        </a>
+                        <a href="http://148.220.4.15/">
+                            <img class="image-fixed-height-xs image-fixed-width-xs" src="../images/logoFeed.svg" />
+                        </a>
+                        <a href="http://perseo.uaq.mx/cas">
+                            <img class="image-fixed-height-xs image-fixed-width-xs" src="../images/logoInterrogacion.svg" />
+                        </a>
+                        <a href="http://www.uaq.mx/contraloriasocial/">
+                            <img class="image-fixed-height-xs image-fixed-width-xs" src="../images/logoOjo.svg" />
+                        </a>
+                        <a href="http://www.uaq.mx/directorio/">
+                            <img class="image-fixed-height-xs image-fixed-width-xs" src="../images/logoTel.svg" />
+                        </a>
+                        <a href="http://www.uaq.mx/transparencia/">
+                            <img class="image-fixed-height-xs image-fixed-width-xs" src="../images/logoLupa.svg" />
+                        </a>
+                        <a href="http://mail.uaq.mx/">
+                            <img class="image-fixed-height-xs image-fixed-width-xs" src="../images/logoMail.svg" />
+                        </a>
+                        <a href="http://www.uaq.mx/">
+                            <img class="image-fixed-height-xs image-fixed-width-xs" src="../images/logoCasa.svg" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

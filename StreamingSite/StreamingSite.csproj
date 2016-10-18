@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0A0E507-0411-457F-9672-A208FB90F179}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StreamingSite</RootNamespace>
+    <AssemblyName>StreamingSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\Inicio.aspx" />
+    <Content Include="admin\Mensaje.aspx" />
+    <Content Include="canales\ebc.aspx" />
+    <Content Include="canales\fba.aspx" />
+    <Content Include="canales\fca.aspx" />
+    <Content Include="canales\fcn.aspx" />
+    <Content Include="canales\fcp.aspx" />
+    <Content Include="canales\fcq.aspx" />
+    <Content Include="canales\fde.aspx" />
+    <Content Include="canales\fen.aspx" />
+    <Content Include="canales\ffi.aspx" />
+    <Content Include="canales\fif.aspx" />
+    <Content Include="canales\fin.aspx" />
+    <Content Include="canales\fll.aspx" />
+    <Content Include="canales\fme.aspx" />
+    <Content Include="canales\fps.aspx" />
+    <Content Include="canales\pry2.aspx" />
+    <Content Include="canales\tvuaq.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="fonts\FuturaStd-Book.otf" />
+    <Content Include="fonts\FuturaStd-Book.woff" />
+    <Content Include="fonts\FuturaStd-Heavy.otf" />
+    <Content Include="fonts\FuturaStd-Heavy.woff" />
+    <Content Include="fonts\FuturaStd-Light.otf" />
+    <Content Include="fonts\FuturaStd-Light.woff" />
+    <Content Include="fonts\FuturaStd-Medium.otf" />
+    <Content Include="fonts\FuturaStd-Medium.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="canales\MasterPage.Master" />
+    <Content Include="admin\MasterPage.Master" />
+    <Content Include="AppCode\StreamingDS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>StreamingDS.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="logs\logfile.log" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="canales\cgsi.aspx" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\fixes.css" />
+    <Content Include="css\fixes.tvuaq.css" />
+    <Content Include="css\theme.min.css" />
+    <Content Include="css\theme.tvuaq.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\estrella.svg" />
+    <Content Include="images\logoBox.svg" />
+    <Content Include="images\logoBoxGris.svg" />
+    <Content Include="images\logoCasa.svg" />
+    <Content Include="images\logoFacebook.svg" />
+    <Content Include="images\logoFacebookBlanco.svg" />
+    <Content Include="images\logoFeed.svg" />
+    <Content Include="images\logoInstagram.svg" />
+    <Content Include="images\logoInstagramBlanco.svg" />
+    <Content Include="images\logoInterrogacion.svg" />
+    <Content Include="images\logoLupa.svg" />
+    <Content Include="images\logoMail.svg" />
+    <Content Include="images\logoOjo.svg" />
+    <Content Include="images\logoPin.svg" />
+    <Content Include="images\logoTel.svg" />
+    <Content Include="images\logoTwiter.svg" />
+    <Content Include="images\logoTwiterBlanco.svg" />
+    <Content Include="images\logoUAQ.svg" />
+    <Content Include="images\logoYoutube.svg" />
+    <Content Include="images\logoYoutubeBlanco.svg" />
+    <Content Include="images\pestana.svg" />
+    <Content Include="images\tituloUAQ.svg" />
+    <Content Include="images\UAQ.svg" />
+    <Content Include="scripts\ai.0.15.0-build58334.js" />
+    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Mensaje.aspx.cs">
+      <DependentUpon>Mensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Mensaje.aspx.designer.cs">
+      <DependentUpon>Mensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\DAO\UsuarioDAO.cs" />
+    <Compile Include="AppCode\Logger.cs" />
+    <Compile Include="AppCode\PasswordHash.cs" />
+    <Compile Include="AppCode\SQLInjects.cs" />
+    <Compile Include="AppCode\Correo.cs" />
+    <Compile Include="AppCode\POCO\Usuario.cs" />
+    <Compile Include="AppCode\StreamingDS.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StreamingDS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="canales\cgsi.aspx.cs">
+      <DependentUpon>cgsi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\cgsi.aspx.designer.cs">
+      <DependentUpon>cgsi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\ebc.aspx.cs">
+      <DependentUpon>ebc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\ebc.aspx.designer.cs">
+      <DependentUpon>ebc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fba.aspx.cs">
+      <DependentUpon>fba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fba.aspx.designer.cs">
+      <DependentUpon>fba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fca.aspx.cs">
+      <DependentUpon>fca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fca.aspx.designer.cs">
+      <DependentUpon>fca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fcn.aspx.cs">
+      <DependentUpon>fcn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fcn.aspx.designer.cs">
+      <DependentUpon>fcn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fcp.aspx.cs">
+      <DependentUpon>fcp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fcp.aspx.designer.cs">
+      <DependentUpon>fcp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fcq.aspx.cs">
+      <DependentUpon>fcq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fcq.aspx.designer.cs">
+      <DependentUpon>fcq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fde.aspx.cs">
+      <DependentUpon>fde.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fde.aspx.designer.cs">
+      <DependentUpon>fde.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fen.aspx.cs">
+      <DependentUpon>fen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fen.aspx.designer.cs">
+      <DependentUpon>fen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\ffi.aspx.cs">
+      <DependentUpon>ffi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\ffi.aspx.designer.cs">
+      <DependentUpon>ffi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fif.aspx.cs">
+      <DependentUpon>fif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fif.aspx.designer.cs">
+      <DependentUpon>fif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fin.aspx.cs">
+      <DependentUpon>fin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fin.aspx.designer.cs">
+      <DependentUpon>fin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fll.aspx.cs">
+      <DependentUpon>fll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fll.aspx.designer.cs">
+      <DependentUpon>fll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fme.aspx.cs">
+      <DependentUpon>fme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fme.aspx.designer.cs">
+      <DependentUpon>fme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\fps.aspx.cs">
+      <DependentUpon>fps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\fps.aspx.designer.cs">
+      <DependentUpon>fps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="canales\pry2.aspx.cs">
+      <DependentUpon>pry2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\pry2.aspx.designer.cs">
+      <DependentUpon>pry2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="canales\tvuaq.aspx.cs">
+      <DependentUpon>tvuaq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="canales\tvuaq.aspx.designer.cs">
+      <DependentUpon>tvuaq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppCode\StreamingDS.dbml.layout">
+      <DependentUpon>StreamingDS.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5746</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5746/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

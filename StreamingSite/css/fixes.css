@@ -1,0 +1,165 @@
+﻿/*Fuentes globales para la página*/
+@font-face
+{
+    font-family: "Futura Std Light";
+    src:
+        url('../fonts/FuturaStd-Light.otf') format('opentype'),
+        url('../fonts/FuturaStd-Light.woff') format('woff');
+    font-weight:normal;
+    font-style: normal;
+}
+@font-face
+{
+    font-family: "Futura Std Book";
+    src:
+        url('../fonts/FuturaStd-Book.otf') format('opentype'),
+        url('../fonts/FuturaStd-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face
+{
+    font-family: "Futura Std Medium";
+    src:
+        url('../fonts/FuturaStd-Medium.otf') format('opentype'),
+        url('../fonts/FuturaStd-Medium.woff') format('woff');
+    font-weight:normal;
+    font-style: normal;
+}
+@font-face
+{
+    font-family: "Futura Std Heavy";
+    src:
+        url('../fonts/FuturaStd-Heavy.otf') format('opentype'),
+        url('../fonts/FuturaStd-Heavy.woff') format('woff');
+    font-weight:normal;
+    font-style: normal;
+}
+/*Color y fuente global para todos los elementos*/
+*
+{
+    font-family:"Futura Std Book";
+}
+.main-color-bg
+{
+    background-color:#005694;
+}
+.main-color
+{
+    color:#005694;
+}
+.color-panel-streaming
+{
+    background-color:#E9EBF4;
+}
+.color-panel
+{
+    color:#FFFFFF;
+}
+.padding-top-xs
+{
+    padding-top:10px;
+}
+.padding-top-sm
+{
+    padding-top:20px;
+}
+.padding-top-md
+{
+    padding-top:30px;
+}
+.padding-top-lg
+{
+    padding-top:40px;
+}
+.margin-top-lg
+{
+    margin-top:40px;
+}
+.margin-top-xs
+{
+    margin-top:10px;
+}
+.margin-top-sm
+{
+    margin-top:20px;
+}
+.margin-top-md
+{
+    margin-top:30px;
+}
+.margin-top-null
+{
+    margin-top:0px;
+}
+.margin-bottom-lg
+{
+    margin-bottom:40px;
+}
+.margin-bottom-xs
+{
+    margin-bottom:10px;
+}
+.margin-bottom-sm
+{
+    margin-bottom:20px;
+}
+.margin-bottom-md
+{
+    margin-bottom:30px;
+}
+.margin-bottom-null
+{
+    margin-bottom:0px;
+}
+.row-eq-height 
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+.navbar-header 
+{
+  float: none;
+}
+.navbar-toggle 
+{
+  display: block;
+}
+.navbar-collapse.collapse 
+{
+  display: none!important;
+}
+.navbar-nav 
+{
+  float: none!important;
+}
+.navbar-nav>li 
+{
+  float: none;
+}
+.navbar-collapse.collapse.in
+{
+  display:block !important;
+}
+.footer-background
+{
+    background-color:#999999;
+}
+.image-fixed-height
+{
+    height:40px;
+}
+.image-fixed-width
+{
+    width:60px;
+}
+.image-fixed-height-xs
+{
+    height:28px;
+}
+.image-fixed-width-xs
+{
+    width:28px;
+}
